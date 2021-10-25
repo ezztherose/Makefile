@@ -139,3 +139,9 @@ submit:
 > $(wildcard $()) --> look for anything in the src-dir that ends with .c
 > OBJS=$(patsubst $(SRC)/%.c, $(OBJ)/%.o, $(SRCS)) --> for pattern substitution. if anyting ands with .c replace it with .o. And do the replacement on the SRCS dir
 
+Adding on a releas (exemple):
+```
+release: CFLAGS=-Wall -o2 -DNDEBUG
+release: clean
+release: $(BIN)
+```
